@@ -8,6 +8,8 @@ public class Hello {
         person.hello();
         System.out.println("Name:" + (person.name) +" " +  person.bmi());
         System.out.println("Name:" + (person1.name) +" " +  person1.bmi());
+        int score = 65;
+        System.out.println(score > 80 || score <70);
         /*int i = 5;
         Integer i1 = 3;
         System.out.println(i1.byteValue());
