@@ -3,7 +3,7 @@ package com.sean
 fun main() {
 //    println("Hello Kotlin");
 //    Human().Hello();
-    var human = Human(60.5f,1.8f);
+    var human = Human( name = "Sean",weight = 66.3f, height = 1.85f); //可以指定值
     human.Hello();
     println(human.bmi())
     val age : Int = 19;      // 名稱 : 型態 = 值
@@ -13,7 +13,13 @@ fun main() {
     var name : String;
     name = "Sean";
 }
-class Human( var weight : Float,var height : Float){
+class Human(var name : String = " ",var weight : Float,var height : Float){  //主要建構子
+    init {
+        println("test $weight")
+    }
+    //constructor(name :String,weight: Float,height: Float) : this(weight, height) {}  //次要建構子不用var val
+
+
     fun bmi() : Float {
         var  bmi = weight / (height * height)
         return bmi;
