@@ -1,6 +1,11 @@
 package com.sean;
 
 fun main() {
+    var s:String? = "HelloWorld";
+//    s = null
+    println(s?.length);
+    println(s?.get(3));
+    println(s?.substring(3));
 //    println("Hello Kotlin");
 //    Human().Hello();
     val score  = 65;

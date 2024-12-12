@@ -1,9 +1,11 @@
 package com.sean.kotlin
 
 fun main() {
-    val scanner = java.util.Scanner(System.`in`); // 關鍵字 + `
+    val scanner = java.util.Scanner(System.`in`); // in關鍵字 + `
     println("Enter your name:")
-    var name = scanner.nextLine();
+//    var name = scanner.nextLine();
+    var name = null
+
     println("Hello $name")
     println("Enter your english score :")
     var english = scanner.nextInt();
@@ -11,12 +13,16 @@ fun main() {
     var math = scanner.nextInt();
     val s1 = Student(name,english,math)
     s1.print()
+    s1.checkName()
 }
-class Student (var name : String,var english : Int,var math : Int){
+class Student (var name : String?,var english : Int,var math : Int){
     fun print(){
         println(
             ("Name:" + name + "\t" + english + "\t" + math + "\t" + "Avg:"
                     + (math + english) / 2)
         );
+    }
+    fun checkName(){
+        println(name?.length)
     }
 }
