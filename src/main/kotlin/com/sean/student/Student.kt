@@ -4,6 +4,9 @@ import java.util.*
 
 fun main() {
 //    userInput()
+    var s1 = Student("Sean", 90, 99)
+    s1.print()
+    println("High score:${s1.highest()}")
 }
 
 private fun userInput() {
@@ -29,6 +32,17 @@ class Student (var name : String?,var english : Int,var math : Int){
                     + (math + english) / 2)
         );
     }
+    fun highest(): Int {
+        var max = if (english > math) {
+            println("english")
+            english
+        } else {
+            println("math")
+            math
+        }
+            return max
+        }
+
     fun checkName(){
         println(name?.length)
     }
