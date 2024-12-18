@@ -4,7 +4,7 @@ import java.util.*
 
 fun main() {
 //    userInput()
-    var s1 = Student("Sean", 90, 99)
+    var s1 = Student("Sean", 99, 50)
     s1.print()
     println("High score:${s1.highest()}")
 }
