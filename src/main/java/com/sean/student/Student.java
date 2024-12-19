@@ -26,4 +26,7 @@ public class Student {
 //        return max;
         return math > english ? math : english;
     }
+    public int avg(){
+        return (math + english) / 2;
+    }
 }
