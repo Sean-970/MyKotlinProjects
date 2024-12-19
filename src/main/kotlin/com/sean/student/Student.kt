@@ -4,9 +4,10 @@ import java.util.*
 
 fun main() {
 //    userInput()
-    var s1 = Student("Sean", 99, 50)
+    var s1 = Student("Sean", 10, 50)
     s1.print()
     println("High score:${s1.highest()}")
+
 }
 
 private fun userInput() {
@@ -27,23 +28,26 @@ private fun userInput() {
 
 class Student (var name : String?,var english : Int,var math : Int){
     fun print(){
-        println(
-            ("Name:" + name + "\t" + english + "\t" + math + "\t" + "Avg:"
-                    + (math + english) / 2)
-        );
+        println("$name\t$english\t$math\t${avg()}\t${grading()}\t${passOrFail()}");
     }
-    fun highest(): Int {
-        var max = if (english > math) {
-            println("english")
-            english
-        } else {
-            println("math")
-            math
-        }
-            return max
-        }
 
-    fun checkName(){
-        println(name?.length)
+    fun checkName() = println(name?.length)
+    fun avg() = ((math + english) / 2)
+    fun passOrFail() = if (avg() > 60) "PASS" else "FAIL"
+
+    fun highest() = if (english > math) {
+        println("english")
+        english
+    } else {
+        println("math")
+        math
     }
+    fun grading() = when(avg()) {
+          in 90..100 -> 'A'
+          in 80..89 -> 'B'
+          in 70..79 -> 'C'
+          in 60..69 -> 'D'
+        else -> 'F'
+    }
+
 }
