@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class StudentRunner {
     public static void main(String[] args) {
 //        userInput();
+        com.sean.kotlin.Student s1 = new com.sean.kotlin.Student("Sean",60,50);
+
+
     }
 
     private static void userInput() {

@@ -4,6 +4,14 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
+//        map();
+//
+//        set();
+//        List();
+//        arrayTest();
+    }
+
+    private static void map() {
         HashMap<String,String> player = new HashMap<>();
         player.put("OKC","SGA");
         player.put("MIL","Gennis");
@@ -13,10 +21,6 @@ public class Test {
         for(String players : player.keySet()){
             System.out.println(player.get(players));
         }
-
-//        set();
-//        List();
-//        arrayTest();
     }
 
     private static void set() {
@@ -33,7 +37,7 @@ public class Test {
     }
 
     private static void List() {
-        ArrayList<Integer> arrayList = new ArrayList();
+        ArrayList<Integer> arrayList = new ArrayList<>();
         arrayList.add(1);
         arrayList.add(3);
         System.out.println(arrayList);
