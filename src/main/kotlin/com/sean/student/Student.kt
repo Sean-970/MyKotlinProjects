@@ -1,13 +1,15 @@
 package com.sean.kotlin
 
+import com.sean.kotlin.Student.Companion
 import java.util.*
 
 fun main() {
 //    userInput()
     var s1 = Student("Sean", 60, 50)
-
     s1.print()
 //    println("High score:${s1.highest()}")
+    var g1 = Graduate("Sean", 60, 90,90)
+    g1.print()
 
 }
 
@@ -26,20 +28,27 @@ private fun userInput() {
     s1.print()
     s1.checkName()
 }
-
-class Student (var name : String?,var english : Int,var math : Int){
+class Graduate(name: String?, english: Int, math: Int, var chinese: Int) : Student(name,english,math){
+    companion object{
+        var pass = 70;
+    }
+    override fun print() = println("$name\t$english\t$math\t$chinese\t${avg()}\t${grading()}\t${passOrFail()}");
+    override fun avg() = ((math + english + chinese) / 3)
+    override fun passOrFail() = if (avg() > com.sean.kotlin.Student.pass) "PASS" else "FAIL"
+}
+open class Student (var name : String?,var english : Int,var math : Int){
     companion object{
         @JvmStatic
         var pass = 50;
     }
-    fun print(){
+    open fun print(){
         println("$name\t$english\t$math\t${avg()}\t${grading()}\t${passOrFail()}");
 
     }
 
     fun checkName() = println(name?.length)
-    fun avg() = ((math + english) / 2)
-    fun passOrFail() = if (avg() > pass) "PASS" else "FAIL"
+    open fun avg() = ((math + english) / 2)
+    open fun passOrFail() = if (avg() > pass) "PASS" else "FAIL"
 
     fun highest() = if (english > math) {
         println("english")
