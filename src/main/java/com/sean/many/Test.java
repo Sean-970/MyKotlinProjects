@@ -1,11 +1,38 @@
 package com.sean.many;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
+        HashMap<String,String> player = new HashMap<>();
+        player.put("OKC","SGA");
+        player.put("MIL","Gennis");
+        player.put("DEN","NiCOLA");
+        player.put("DEN","NIKOLA");
+        System.out.println(player);
+        for(String players : player.keySet()){
+            System.out.println(player.get(players));
+        }
+
+//        set();
+//        List();
+//        arrayTest();
+    }
+
+    private static void set() {
+        Set<Integer> set = new HashSet<>();
+        set.add(2);
+        set.add(3);
+        set.add(5);
+        set.add(7);
+        set.add(9);
+        System.out.println(set);
+        for(int n : set){
+            System.out.println(n);
+        }
+    }
+
+    private static void List() {
         ArrayList<Integer> arrayList = new ArrayList();
         arrayList.add(1);
         arrayList.add(3);
@@ -14,7 +41,6 @@ public class Test {
         for( int list:lists){
             System.out.println(list);
         }
-        //        arrayTest();
     }
 
     private static void arrayTest() {
