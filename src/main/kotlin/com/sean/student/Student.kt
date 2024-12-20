@@ -39,7 +39,7 @@ class Graduate(name: String?, english: Int, math: Int, var chinese: Int) : Stude
 open class Student (var name : String?,var english : Int,var math : Int){
     companion object{
         @JvmStatic
-        var pass = 50;
+        var pass = 60;
     }
     open fun print(){
         println("$name\t$english\t$math\t${avg()}\t${grading()}\t${passOrFail()}");
