@@ -18,4 +18,9 @@ public class BigLottery extends Lottery {
         }
         System.out.println(numbers);
     }
+
+    public static void main(String[] args) {
+        BigLottery bigLottery = new BigLottery();
+        bigLottery.generate();
+    }
 }
