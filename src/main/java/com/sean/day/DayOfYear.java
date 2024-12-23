@@ -31,14 +31,13 @@ public class DayOfYear {
             String dayString = br.readLine();
             day = (!dayString.isEmpty()) ? Integer.parseInt(monthString) : day;
             System.out.println(day);
-
             System.out.println(year + "/" + month + "/" + day );
             System.out.println(date);
-            int days = 0;
+
             for(int i = 0; i<month-1; i++){
-                days += months[i];
+                day += months[i];
             }
-            days+=day;
+            int days = day++;
             System.out.println(days);
 
             if(isLeapYear(year)){
